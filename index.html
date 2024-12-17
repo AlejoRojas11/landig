@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Landing Page</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Enlace a Font Awesome para los iconos -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
     body, html {
       margin: 0;
@@ -22,6 +24,9 @@
       background-color: rgba(0, 0, 0, 0.4);
       padding: 10px 20px;
       z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     /* Estilo de la imagen en el header */
@@ -29,6 +34,33 @@
       width: 200px;
       height: auto;
       margin-left: 60px;
+    }
+
+    /* Estilo del botón de PQR */
+    .btn-pqr {
+      color: #fcfcfc;
+      border: 2px solid #007bff00;
+      background-color: transparent;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+      margin: 10px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      
+    }
+
+    .btn-pqr i {
+      margin-right: 8px;
+    }
+
+    .btn-pqr:hover {
+      background-color: #000000;
+      color: #ffffff;
+      border-color: #07070700;
     }
 
     .hero {
@@ -43,7 +75,7 @@
       padding-top: 70px;
     }
 
-    /* Estilo de las secciones de botones */
+    /* Estilo para las secciones de botones */
     .section {
       display: flex;
       flex-direction: column;
@@ -86,119 +118,111 @@
       border-color: #007bff;
     }
 
-   /* Ajustar la separación de la vista móvil para evitar solapamiento con el header */
-.mobile-view {
-  display: none;
-  background-image: url('vertical2.png'); /* Imagen de fondo para móvil */
-  background-size: cover; /* Cubrir todo el contenedor */
-  background-position: center; /* Centrar la imagen */
-  background-repeat: no-repeat; /* Evitar repetición */
-  height: 100vh;
-  text-align: center;
-  padding: 20px;
-  color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: sans-serif;
-  transition: background-size 0.5s ease;
-  margin-top: 70px; /* Agregar margen superior para separar del navbar */
-}
+    /* Vista móvil */
+    .mobile-view {
+      display: none;
+      background-image: url('vertical2.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+      transition: background-size 0.5s ease;
+      margin-top: 70px;
+    }
 
-/* Añadir separación entre las secciones de Solar y Telco */
-.mobile-view .solar-text,
-.mobile-view .sostenible-text {
-  margin-bottom: 90px; /* Separación entre los textos */
-}
+    .mobile-view .solar-text,
+    .mobile-view .sostenible-text {
+      margin-bottom: 90px; /* Separación entre los textos */
+    }
 
-.mobile-view .telco-text {
-  margin-top: 50px; /* Separación antes del texto de Telco */
-}
+    .mobile-view .telco-text {
+      margin-top: 50px;
+    }
 
-.mobile-view h2 {
-  color: #fff;
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-}
+    .mobile-view h2 {
+      color: #fff;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
 
-/* Estilo específico para TECNOLOGÍA SOLAR con borde verde */
-.mobile-view .solar-text {
-  color: transparent;
-  font-family: century-gothic, sans-serif;
-  font-size: 2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  -webkit-text-stroke: 2px #ffffff;
-}
+    .mobile-view .solar-text {
+      color: transparent;
+      font-family: century-gothic, sans-serif;
+      font-size: 2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      -webkit-text-stroke: 2px #ffffff;
+    }
 
-/* Estilo específico para SOSTENIBLE con borde blanco */
-.mobile-view .sostenible-text {
-  color: transparent;
-  font-family: century-gothic, sans-serif;
-  font-size: 2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  -webkit-text-stroke: 1px #ffffff;
-}
+    .mobile-view .sostenible-text {
+      color: transparent;
+      font-family: century-gothic, sans-serif;
+      font-size: 2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      -webkit-text-stroke: 1px #ffffff;
+    }
 
-/* Estilo para los textos "SOLUCIONES A LA MEDIDA" y "FIBRA ÓPTICA" en blanco */
-.mobile-view .telco-text {
-  color: transparent;
-  font-family: century-gothic, sans-serif;
-  font-size: 2rem;
-  text-transform: uppercase;
-  -webkit-text-stroke: 1px #ffffff;
-}
+    .mobile-view .telco-text {
+      color: transparent;
+      font-family: century-gothic, sans-serif;
+      font-size: 2rem;
+      text-transform: uppercase;
+      -webkit-text-stroke: 1px #ffffff;
+    }
 
-.mobile-view h2 {
-  font-family: century-gothic, sans-serif;
-  font-weight: bold;
-  font-size: 1.5rem;
-  text-transform: uppercase;
-  color: #ffffff; /* Asegúrate de que el color se aplique correctamente */
-}
+    /* Responsividad para pantallas pequeñas */
+    @media (max-width: 768px) {
+      .hero {
+        display: none;
+      }
 
-/* Responsividad para pantallas pequeñas */
-@media (max-width: 768px) {
-  .hero {
-    display: none;
-  }
+      .mobile-view {
+        display: flex;
+      }
 
-  .mobile-view {
-    display: flex;
-  }
+      #solar-section {
+        width: 80%;
+        padding: 10px;
+        margin-left: 25%;
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+      }
 
-  #solar-section {
-    width: 80%;
-    padding: 10px;
-    margin-left: 25%;
-    text-align: right; /* Alineamos el texto de Solar a la izquierda */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-  }
-  
-  #telco-section {
-    width: 100%;
-    padding: 50px;
-    margin-left: 0.1%;
-    text-align: left; /* Alineamos el texto de Telco a la derecha */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-  }
-}
-
-    
+      #telco-section {
+        width: 100%;
+        padding: 50px;
+        margin-left: 0.1%;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+      }
+    }
   </style>
 </head>
 <body>
   <!-- Header con imagen en la esquina izquierda -->
   <header>
     <img src="Logo.svg" alt="Logo" class="logo">
+    <!-- Botón PQR alineado a la derecha -->
+    <a href="https://mesadeayuda.energitel.com/" target="_blank">
+      <button class="btn-pqr ml-auto">
+        <i class="fas fa-comment-dots"></i> PQR
+      </button>
+    </a>
   </header>
 
   <!-- Vista de escritorio -->
@@ -236,7 +260,6 @@
         <button class="btn-blue">Visita nuestra web Telco</button>
       </a>
     </div>
-    
   </div>
 </body>
 </html>
