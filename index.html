@@ -86,87 +86,119 @@
       border-color: #007bff;
     }
 
-    /* Estilo de la vista móvil */
-    .mobile-view {
-      display: none;
-      background-image: url('vertical2.png'); /* Imagen de fondo para móvil */
-      background-size: cover; /* Cubrir todo el contenedor */
-      background-position: center; /* Centrar la imagen */
-      background-repeat: no-repeat; /* Evitar repetición */
-      height: 100vh;
-      text-align: center;
-      padding: 20px;
-      color: #ffffff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      font-family: sans-serif;
-      transition: background-size 0.5s ease;
-    }
+   /* Ajustar la separación de la vista móvil para evitar solapamiento con el header */
+.mobile-view {
+  display: none;
+  background-image: url('vertical2.png'); /* Imagen de fondo para móvil */
+  background-size: cover; /* Cubrir todo el contenedor */
+  background-position: center; /* Centrar la imagen */
+  background-repeat: no-repeat; /* Evitar repetición */
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  transition: background-size 0.5s ease;
+  margin-top: 70px; /* Agregar margen superior para separar del navbar */
+}
 
-    /* Añadir separación entre las secciones de Solar y Telco */
-    .mobile-view .solar-text,
-    .mobile-view .sostenible-text {
-      margin-bottom: 90px; /* Separación entre los textos */
-    }
+/* Añadir separación entre las secciones de Solar y Telco */
+.mobile-view .solar-text,
+.mobile-view .sostenible-text {
+  margin-bottom: 90px; /* Separación entre los textos */
+}
 
-    .mobile-view .telco-text {
-      margin-top: 50px; /* Separación antes del texto de Telco */
-    }
+.mobile-view .telco-text {
+  margin-top: 50px; /* Separación antes del texto de Telco */
+}
 
-    .mobile-view h2 {
-      color: #fff;
-      font-size: 1.5rem;
-      margin-bottom: 20px;
-    }
+.mobile-view h2 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
 
-    /* Estilo específico para TECNOLOGÍA SOLAR con borde verde */
-    .mobile-view .solar-text {
-      color: transparent;
-      font-family: century-gothic, sans-serif;
-      font-size: 2rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      -webkit-text-stroke: 2px #ffffff;
-    }
+/* Estilo específico para TECNOLOGÍA SOLAR con borde verde */
+.mobile-view .solar-text {
+  color: transparent;
+  font-family: century-gothic, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  -webkit-text-stroke: 2px #ffffff;
+}
 
-    /* Estilo específico para SOSTENIBLE con borde blanco */
-    .mobile-view .sostenible-text {
-      color: transparent;
-      font-family: century-gothic, sans-serif;
-      font-size: 2rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      -webkit-text-stroke: 2px #ffffff;
-    }
+/* Estilo específico para SOSTENIBLE con borde blanco */
+.mobile-view .sostenible-text {
+  color: transparent;
+  font-family: century-gothic, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px #ffffff;
+}
 
-    /* Estilo para los textos "SOLUCIONES A LA MEDIDA" y "FIBRA ÓPTICA" en blanco */
-    .mobile-view .telco-text {
-      color: transparent;
-      font-family: century-gothic, sans-serif;
-      font-size: 2rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      -webkit-text-stroke: 2px #ffffff;
-    }
+/* Estilo para los textos "SOLUCIONES A LA MEDIDA" y "FIBRA ÓPTICA" en blanco */
+.mobile-view .telco-text {
+  color: transparent;
+  font-family: century-gothic, sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px #ffffff;
+}
 
-    /* Responsividad para pantallas pequeñas */
-    @media (max-width: 768px) {
-      .hero {
-        display: none;
-      }
+.mobile-view h2 {
+  font-family: century-gothic, sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: #ffffff; /* Asegúrate de que el color se aplique correctamente */
+}
 
-      .mobile-view {
-        display: flex;
-      }
-    }
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+  .hero {
+    display: none;
+  }
+
+  .mobile-view {
+    display: flex;
+  }
+
+  #solar-section {
+    width: 80%;
+    padding: 10px;
+    margin-left: 25%;
+    text-align: right; /* Alineamos el texto de Solar a la izquierda */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  
+  #telco-section {
+    width: 100%;
+    padding: 50px;
+    margin-left: 0.1%;
+    text-align: left; /* Alineamos el texto de Telco a la derecha */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+  }
+}
+
+    
   </style>
 </head>
 <body>
   <!-- Header con imagen en la esquina izquierda -->
   <header>
-    <img src="Logo.svg" alt="Logo" class="logo">
+    <img src="logo.svg" alt="Logo" class="logo">
   </header>
 
   <!-- Vista de escritorio -->
@@ -184,15 +216,19 @@
 
   <!-- Vista móvil -->
   <div class="mobile-view">
-    <div>
+    <!-- Sección Solar -->
+    <div id="solar-section">
       <h2>Descubre cómo nuestra <span class="solar-text">TECNOLOGÍA SOLAR</span> puede impulsar tu negocio hacia un FUTURO <span class="sostenible-text">SOSTENIBLE</span></h2>
       <button class="btn-green">Visita nuestra web Solar</button>
     </div>
+    
     <br><br><br><br>
-    <div>
+    <!-- Sección Telco -->
+    <div id="telco-section">
       <h2>Conoce las <span class="telco-text">SOLUCIONES A LA MEDIDA</span> para la construcción de redes de <span class="telco-text">FIBRA ÓPTICA</span></h2>
       <button class="btn-blue">Visita nuestra web Telco</button>
     </div>
+    
   </div>
 </body>
 </html>
